@@ -1,0 +1,34 @@
+1. Constructor-
+    that is responsible for creating an object
+    gets called automatically and only once
+    same name as class name
+    default constructor is a empty block of code we can over write here what we want
+    this will called for all the object in the class
+    Parameterised Constructor Which have parameters in it 
+    If we have two or more than two constructor with same name then this called Constructor Overloading
+
+2. Copy Constructor-
+    Make a copy of an given object 
+    Exist by default
+    While making a copy constructor we use pass by refrence (address or & operator)
+     Reason- because when we send copy of the object of which we want to make a copy constructor it asks the compiler to make another copy for the object we have used as parameter
+    When you need to define your own copy constructor
+    The copy made by default copy constructor is known as Shallow Copy
+    You have to make you own copy constructor if a deep copy is needed when you have to allocate dynamic memory
+
+3. Copy Assignment Operator-
+    Copies when you do Assignment
+    Like 
+    -Car d=c; //copy constructor
+    -Car d;
+     d=c; //copy assignment operator
+    Present by default
+    You can write your own copy assignment operator to make a deep copy
+    Cab be called many times when ever we need
+
+4. Destructor
+    Clear out memory occupied by the object
+    Automatically called when the object goes out of scoped
+    Generally you dont have to write code for Destructor Except for the cases when you dynamically allocated memory
+    When the main function reaches its end the function call stack filled this is the time when Destructor called after all the function call this will destroy all the object of the particular class using its block of code
+    Order of destruction is inverse of calling the function like if we have declared a first then b so the destruction call is first for b then address
