@@ -38,7 +38,7 @@ int main(){
     // }
     int n=s.size();
     for(int i=0;i<n;i++){
-        count+=fun(s,i,i);
+        count+=fun(s,i,i); 
         count+=fun(s,i,i+1);
     }
     cout<<count<<endl;
