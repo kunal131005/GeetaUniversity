@@ -1,20 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class LinkNode{
-    public:
-
+class ListNode
+{
+public:
     int val;
-    LinkNode* prev;
-    LinkNode* next;
+    ListNode *prev;
+    ListNode *next;
 
-    LinkNode(int val){
-        this->val=val;
-        this->prev=NULL;
-        this->next=NULL;
+    ListNode(int val)
+    {
+        this->val = val;
+        this->prev = NULL;
+        this->next = NULL;
     }
 };
-int main(){
-    
-    LinkNode* node = new LinkNode(10);
-    cout<<node->val<<endl<<node->prev<<endl<<node->next<<endl;
+int main()
+{
+
+    ListNode *node = new ListNode(10);
+    cout << node->val << endl
+         << node->prev << endl
+         << node->next << endl;
 }
