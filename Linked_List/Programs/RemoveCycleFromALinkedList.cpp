@@ -21,16 +21,28 @@ void Print(ListNode *head)
     }
     cout << endl;
 }
-bool CycleDetect(ListNode* head){
-    ListNode* slow = head;
-    ListNode* fast = head;
+void *RemoveCycle(ListNode *&head)
+{
+    ListNode *slow = head;
+    ListNode *fast = head;
 
-    while(fast != NULL and fast->next != NULL){
+    while (true)
+    {
         fast = fast->next->next;
-        slow = slow->next;
-        if(slow == fast)return true;
+        slow = slow -> next;
+
+        if(slow == fast){
+            break;
+        }
     }
-    return false;
+
+    slow = head;
+    while(slow->next!=fast->next){
+        slow = slow->next;
+        fast = fast->next;
+    }
+
+    fast -> next = NULL;
 }
 int main()
 {
@@ -42,5 +54,6 @@ int main()
     head->next->next->next->next->next = new ListNode(60);
     head->next->next->next->next->next->next = head->next->next;
 
-    CycleDetect(head) ? cout<<"True"<<endl : cout<<"False"<<endl; 
+    RemoveCycle(head);
+    Print(head);
 }
